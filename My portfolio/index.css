@@ -1,0 +1,98 @@
+/* Define color variables */
+:root {
+    --main-bg-color: #ddbfbf; /* Light background */
+    --accent-color: #80a4c4; /* Secondary color */
+    --primary-text-color: #0d6efd; /* Blue */
+}
+
+/* Global Styling */
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: var(--main-bg-color);
+    color: var(--accent-color);
+}
+
+/* Section Styling */
+.First-container, .Second-container, .Aboutme, .Contactme {
+    padding: 20px;
+    background-color: white;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.First-container {
+    background-image: url('./immagini/Wallpaper.png');
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+
+.First-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(255, 255, 255, 0.5); /* Modifica l'opacità qui */
+    z-index: 1;
+}
+
+.First-container .px-4 {
+    position: relative;
+    z-index: 2; /* Assicurati che il testo sia sopra lo sfondo */
+}
+
+
+.Second-container {
+    text-align: center;
+}
+
+.feature {
+    display: inline-block;
+    width: 100%; /* Mantieni la larghezza per ogni colonna */
+    text-align: center; /* Centra il contenuto del box */
+}
+
+
+h1, h2, h3 {
+    color: var(--primary-text-color);
+}
+
+/* Features Styling */
+.feature {
+    border: 1px solid var(--accent-color);
+    border-radius: 8px;
+    padding: 15px;
+    transition: transform 0.2s;
+}
+
+.feature:hover {
+    transform: scale(1.05);
+}
+
+/* Link Styling */
+.icon-link {
+    color: var(--primary-text-color);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.icon-link:hover {
+    text-decoration: underline;
+}
+
+h3 svg {
+    margin-right: 8px; /* Spazio tra l'icona e il testo */
+    vertical-align: middle; /* Allineamento verticale */
+}
+
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .First-container, .Second-container, .Aboutme, .Contactme {
+        padding: 15px;
+    }
+}
+
