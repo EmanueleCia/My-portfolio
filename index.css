@@ -96,3 +96,18 @@ h3 svg {
         padding: 15px;
     }
 }
+
+
+
+/* Initial state for fade-in elements */
+.fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+/* Visible state for fade-in elements */
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}

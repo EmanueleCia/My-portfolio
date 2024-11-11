@@ -5,6 +5,9 @@
     --text-color: #333;
     --accent-color: #0d6efd;
     --secondary-color: #6c757d;
+    --hover-color: #084298;
+    --border-radius: 8px;
+    --transition-speed: 0.3s;
 }
 
 /* Global Styles */
@@ -13,6 +16,7 @@
     padding: 0;
     box-sizing: border-box;
     font-family: 'Roboto', sans-serif;
+    scroll-behavior: smooth; /* Smooth scrolling */
 }
 
 body {
@@ -27,6 +31,7 @@ body {
     padding: 2rem;
     background-color: white;
     border-bottom: 2px solid var(--secondary-color);
+    position: relative;
 }
 
 .header .profile-pic {
@@ -35,10 +40,16 @@ body {
     height: auto;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
     margin-bottom: 1rem;
+    transition: transform var(--transition-speed);
+}
+
+.header .profile-pic:hover {
+    transform: scale(1.05); /* Scale effect on hover */
 }
 
 h1, h2 {
     color: var(--accent-color);
+    text-transform: uppercase; /* Uppercase for headings */
 }
 
 h3 {
@@ -51,23 +62,43 @@ h3 {
     margin: 2rem auto;
     padding: 1.5rem;
     background-color: white;
-    border-radius: 8px;
+    border-radius: var(--border-radius);
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    position: relative;
+    overflow: hidden; /* For animations */
+}
+
+.section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(255, 255, 255, 0.1);
+    z-index: 0;
+    transition: opacity var(--transition-speed);
+    opacity: 0; /* Initially hidden */
+}
+
+.section:hover::before {
+    opacity: 1; /* Show overlay on hover */
 }
 
 .section h2 {
     margin-bottom: 1rem;
     font-size: 1.75rem;
     text-align: center;
+    position: relative;
+    z-index: 1; /* Bring h2 above overlay */
 }
-
 
 /* Experience and Project Articles */
 .experience, .project {
     margin-bottom: 1.5rem;
 }
 
-.Art-for-life{
+.Art-for-life {
     text-align: center;
     margin-bottom: 10px;
 }
@@ -86,6 +117,15 @@ h3 {
 
 .skills li {
     margin-bottom: 0.75rem;
+    position: relative;
+    padding-left: 20px; /* Indentation for skills */
+}
+
+.skills li::before {
+    content: '✔'; /* Checkmark for skills */
+    position: absolute;
+    left: 0;
+    color: var(--accent-color);
 }
 
 /* Buttons */
@@ -100,13 +140,13 @@ h3 {
     background-color: var(--accent-color);
     color: white;
     text-decoration: none;
-    border-radius: 5px;
-    transition: background-color 0.3s;
+    border-radius: var(--border-radius);
+    transition: background-color var(--transition-speed), transform var(--transition-speed);
 }
 
-
 .links .button:hover {
-    background-color: #084298;
+    background-color: var(--hover-color);
+    transform: translateY(-2px); /* Lift effect on hover */
 }
 
 /* Footer */
@@ -130,7 +170,6 @@ h3 {
     }
     
     .links .button {
-        padding: 0.4rem 0.8rem;
-        font-size: 0.9rem;
-    }
-}
+        padding: 0.4rem 0.
+    } 
+}   
