@@ -1,13 +1,13 @@
 /* Root Variables */
-/* Root Variables */
 :root {
-    --main-bg-color: #f4f4f9;
+    --main-bg-color: rgba(244, 244, 249, 0.8); /* Set main background color with transparency */
     --text-color: #333;
     --accent-color: #0d6efd;
-    --secondary-color: #6c757d;
+    --secondary-color: #000000;
     --hover-color: #084298;
     --border-radius: 8px;
     --transition-speed: 0.3s;
+    --background-image-url: url('../immagini/portfoliobg.webp'); /* Add your image path */
 }
 
 /* Global Styles */
@@ -21,6 +21,9 @@
 
 body {
     background-color: var(--main-bg-color);
+    background-image: var(--background-image-url); /* Set the background image */
+    background-size: cover; /* Cover the entire body */
+    background-position: center; /* Center the image */
     color: var(--text-color);
     line-height: 1.6;
 }
@@ -29,7 +32,7 @@ body {
 .header {
     text-align: center;
     padding: 2rem;
-    background-color: white;
+    background-color: rgba(255, 255, 255, 0.8); /* Set header background with transparency */
     border-bottom: 2px solid var(--secondary-color);
     position: relative;
 }
@@ -61,12 +64,13 @@ h3 {
     max-width: 800px;
     margin: 2rem auto;
     padding: 1.5rem;
-    background-color: white;
+    background-color: rgba(255, 255, 255, 0.8); /* Set section background with transparency */
     border-radius: var(--border-radius);
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
     position: relative;
     overflow: hidden; /* For animations */
 }
+
 
 .section::before {
     content: '';

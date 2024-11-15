@@ -4,23 +4,28 @@
     --accent-color: #6c63ff; /* Vibrant purple */
     --primary-text-color: #333333; /* Dark gray for primary text */
     --secondary-text-color: #555555; /* Medium gray for secondary text */
-    --border-color: #e0e0e0; /* Light gray for borders */
+    --border-color: var(--accent-color); /* Set border color to accent color */
 }
 
 /* Global Styling */
 body {
     font-family: 'Roboto', sans-serif;
-    background-color: var(--main-bg-color);
+    background-image: url(./immagini/portfoliobg.webp); /* Add your background image */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
     color: var(--primary-text-color);
 }
 
 /* Section Styling */
 .First-container, .Second-container, .Aboutme, .Contactme {
     padding: 20px;
-    background-color: white;
+    background-color: rgba(255, 255, 255, 0.8); /* White background with 80% opacity */
     margin-bottom: 20px;
     border-radius: 8px;
     box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+    border: 1px solid var(--border-color); /* Set border color to accent color */
 }
 
 .First-container {
@@ -63,7 +68,7 @@ h1, h2, h3 {
 
 /* Features Styling */
 .feature {
-    border: 1px solid var(--border-color);
+    border: 1px solid var(--border-color); /* Set border color to accent color */
     border-radius: 8px;
     padding: 15px;
     transition: transform 0.2s, box-shadow 0.2s; /* Added box-shadow transition */
@@ -90,14 +95,14 @@ h3 svg {
     vertical-align: middle; /* Vertical alignment */
 }
 
+
+
 /* Responsive Adjustments */
 @media (max-width: 768px) {
     .First-container, .Second-container, .Aboutme, .Contactme {
         padding: 15px;
     }
 }
-
-
 
 /* Initial state for fade-in elements */
 .fade-in {
